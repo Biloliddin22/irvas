@@ -3,7 +3,7 @@ const checkNumInputs = (selector) => {
 
     numInputs.forEach(item => {
         item.addEventListener('input', () => {
-            item.value = item.value.replace(/\D/, ''); 
+            item.value = item.value.replace(/[A-Za-z]/, ''); 
         });
     });
 };

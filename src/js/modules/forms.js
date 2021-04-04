@@ -16,10 +16,13 @@ const forms = (state) => {
         document.querySelector('.status').textContent = message.loading;
         let res = await fetch(url, {
             method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
             body: data
         });
 
-        return await res.text();
+        return await res.json();
     };
 
     const clearInputs = () => {
@@ -43,7 +46,9 @@ const forms = (state) => {
                 }
             }
 
-            postData('./assets/server.php', formData)
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+            postData('http://localhost:3000/requests', json)
                 .then(res => {
                     console.log(res);
                     statusMessage.textContent = message.success;
