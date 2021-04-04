@@ -3,11 +3,13 @@ import modals from './modules/modals';
 import tabs from './modules/tabs';
 import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
+import timer from './modules/timer';
 
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
 
     let modalState = {};
+    let deadLine = '2021-04-30';
 
     
     changeModalState(modalState);
@@ -27,4 +29,5 @@ window.addEventListener('DOMContentLoaded', () => {
             'inline-block'
         );
     forms(modalState);
+    timer('.container1', deadLine);
 });
