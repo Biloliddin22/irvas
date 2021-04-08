@@ -32,6 +32,19 @@ body {
   }
 }
 
+.pageup {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+.pageup img {
+  width: 100%;
+}
+
 a:hover {
   text-decoration: none;
 }

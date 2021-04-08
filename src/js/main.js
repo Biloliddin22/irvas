@@ -5,6 +5,7 @@ import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
 import timer from './modules/timer';
 import images from './modules/images';
+import pageUp from './modules/pageUp';
 
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
@@ -37,4 +38,5 @@ window.addEventListener('DOMContentLoaded', () => {
     forms(modalState);
     timer('.container1', deadLine);
     images();
+    pageUp();
 });

@@ -33,6 +33,19 @@ const modals = () => {
             document.querySelector('.popup').style.display = 'none';
         });
 
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Escape' && modal.style.display == 'block') {
+                windows.forEach(item => {
+                    item.style.display = 'none';
+                });
+
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+                document.body.style.marginRight = `0px`;
+                document.querySelector('.popup').style.display = 'none';
+            }
+        });
+
         modal.addEventListener('click', (e) => {
             if (e.target === modal && closeClickOverlay) {
                 windows.forEach(item => {
@@ -42,6 +55,7 @@ const modals = () => {
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
                 document.body.style.marginRight = `0px`;
+                document.querySelector('.popup').style.display = 'none';
             }
         });
     }
